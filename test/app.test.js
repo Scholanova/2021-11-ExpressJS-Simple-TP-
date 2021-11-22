@@ -30,7 +30,7 @@ describe('un test qui est vert', () => {
 // Ajouter une route GET /number qui retourne un nombre aléatoire
 // Il faut récupérer le nombre aléatoire en utilisant dependency.getRandomNumber
 // Le retour doit être un json au format suivant : { number: 20 }
-describe('appel GET /numbers', () => {
+describe('appel GET /number', () => {
   let response
   let number
 
@@ -67,7 +67,7 @@ describe.skip('appel POST /multiply', () => {
     dependency.getRandomNumber.resolves(dependencyNumber)
 
     response = await request(app)
-      .post('/square')
+      .post('/multiply')
       .send({ 'number': bodyNumber })
   })
 
@@ -88,7 +88,7 @@ describe.skip('appel POST /multiply', () => {
 // Modifier la une route POST /multiply pour retourner un status 400
 // si la clé number n'est pas présente dans le body
 // Le body de retour doit contenir { error: 'number is absent from request body' }
-describe.skip('appel POST /square 400 error', () => {
+describe.skip('appel POST /multiply 400 error', () => {
   let response
   let dependencyNumber
 
@@ -97,7 +97,7 @@ describe.skip('appel POST /square 400 error', () => {
     dependency.getRandomNumber.resolves(dependencyNumber)
 
     response = await request(app)
-      .post('/square')
+      .post('/multiply')
       .send({ 'anOtherKey': 'a string !' })
   })
 
@@ -116,7 +116,7 @@ describe.skip('appel POST /square 400 error', () => {
 // Modifier la une route POST /multiply pour retourner un status 422
 // si le résultat est plus grand que 1024
 // Le body de retour doit contenir { error: 'multiplied number is too big' }
-describe.skip('appel POST /square 422 error', () => {
+describe.skip('appel POST /multiply 422 error', () => {
   let response
   let bodyNumber
   let dependencyNumber
@@ -127,7 +127,7 @@ describe.skip('appel POST /square 422 error', () => {
     dependency.getRandomNumber.resolves(dependencyNumber)
 
     response = await request(app)
-      .post('/square')
+      .post('/multiply')
       .send({ 'number': bodyNumber })
   })
 
@@ -147,7 +147,7 @@ describe.skip('appel POST /square 422 error', () => {
 // sur la fonction getRandomNumber
 // Le faire en utilisant un middleware de gestion d'erreur
 // Le body de retour doit contenir { error: 'unexpected error' } et un status 500
-describe.skip('appel POST /square 500 error', () => {
+describe.skip('appel POST /multiply 500 error', () => {
   let response
   let bodyNumber
   let dependencyNumber
@@ -158,7 +158,7 @@ describe.skip('appel POST /square 500 error', () => {
     dependency.getRandomNumber.rejects(new UnexpectedError())
 
     response = await request(app)
-      .post('/square')
+      .post('/multiply')
       .send({ 'number': bodyNumber })
   })
 
