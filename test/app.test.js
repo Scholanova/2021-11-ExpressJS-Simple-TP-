@@ -56,7 +56,7 @@ describe('appel GET /number', () => {
 // Ajouter une route POST /multiply qui retourne un nombre passé en argument au carré
 // Il faut récupérer le nombre depuis le body { number: 2 }
 // Le retour doit être un json au format suivant : { number: 32 }
-describe.skip('appel POST /multiply', () => {
+describe('appel POST /multiply', () => {
   let response
   let bodyNumber
   let dependencyNumber
@@ -88,7 +88,7 @@ describe.skip('appel POST /multiply', () => {
 // Modifier la une route POST /multiply pour retourner un status 400
 // si la clé number n'est pas présente dans le body
 // Le body de retour doit contenir { error: 'number is absent from request body' }
-describe.skip('appel POST /multiply 400 error', () => {
+describe('appel POST /multiply 400 error', () => {
   let response
   let dependencyNumber
 
@@ -116,7 +116,7 @@ describe.skip('appel POST /multiply 400 error', () => {
 // Modifier la une route POST /multiply pour retourner un status 422
 // si le résultat est plus grand que 1024
 // Le body de retour doit contenir { error: 'multiplied number is too big' }
-describe.skip('appel POST /multiply 422 error', () => {
+describe('appel POST /multiply 422 error', () => {
   let response
   let bodyNumber
   let dependencyNumber
@@ -147,7 +147,7 @@ describe.skip('appel POST /multiply 422 error', () => {
 // sur la fonction getRandomNumber
 // Le faire en utilisant un middleware de gestion d'erreur
 // Le body de retour doit contenir { error: 'unexpected error' } et un status 500
-describe.skip('appel POST /multiply 500 error', () => {
+describe('appel POST /multiply 500 error', () => {
   let response
   let bodyNumber
   let dependencyNumber
@@ -177,7 +177,7 @@ describe.skip('appel POST /multiply 500 error', () => {
 // Modifier la l'application pour gérer les erreurs 404
 // Le faire en utilisant un middleware catch all
 // Le body de retour doit contenir { error: 'route not found' } et un status 404
-describe.skip('appel POST /not/a/route 404 error', () => {
+describe('appel POST /not/a/route 404 error', () => {
   let response
 
   beforeEach(async () => {
