@@ -62,8 +62,8 @@ describe.skip('appel POST /multiply', () => {
   let dependencyNumber
 
   beforeEach(async () => {
-    dependencyNumber = Math.floor(Math.random() * 100)
-    bodyNumber = Math.floor(Math.random() * 100)
+    dependencyNumber = Math.floor(Math.random() * 25)
+    bodyNumber = Math.floor(Math.random() * 25)
     dependency.getRandomNumber.resolves(dependencyNumber)
 
     response = await request(app)
